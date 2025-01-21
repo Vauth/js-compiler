@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Static javascript compiler.">
+    <meta name="author" content="Vauth">
+    <meta property="og:title" content="Javascript - Compiler">
+    <meta property="og:description" content="Static javascript compiler.">
+    <meta property="og:url" content="https://github.com/vauth/js-compiler">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="JS Compiler">
+    <link rel="icon" type="image/png" href="./files/favicon.png">
+    <title>JS Compiler</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- CodeMirror -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/theme/material-darker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="toolbar">
+            <button class="btn" onclick="executeCode()">
+                <i class="fas fa-play"></i> Run
+            </button>
+            <button class="btn" onclick="saveFile()">
+                <i class="fas fa-save"></i> Save
+            </button>
+            <div class="btn auto-run">
+                <label>
+                    <input type="checkbox" id="autoRun"> Auto Run
+                </label>
+            </div>
+        </div>
+
+        <div class="compiler-grid">
+            <div class="editor-container">
+                <textarea id="codeEditor"></textarea>
+            </div>
+            
+            <div class="output-container">
+                <pre id="output"></pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/javascript/javascript.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="./scripts/script.js"></script>
+</body>
+</html>
