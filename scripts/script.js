@@ -160,3 +160,10 @@ document.addEventListener('keydown', (e) => {
         saveFile();
     }
 });
+
+// Hide loader when all resources are loaded
+window.addEventListener('load', () => {
+    const loader = document.querySelector('.loader');
+    loader.classList.add('hidden');
+    setTimeout(() => loader.remove(), 300); // Remove after fade-out
+});
